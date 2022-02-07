@@ -25,9 +25,11 @@ petsRouter.post('/api/pets', async (request, response, next) => {
 
     try {
         const savedPet = await pet.save();
+        console.log('successfully');
         response.json(savedPet);
     } catch (e) {
         next(e.message);
+        console.log('failed');
     }
 });
 
